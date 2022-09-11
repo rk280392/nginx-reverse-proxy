@@ -10,6 +10,7 @@ Deploy two web applications running on docker containers inside an EC2 Instance.
 ## Implementation
 
    1 - site1 and site2 directories contains simple go webapps running on port 30008
+
    2 - reverse proxy directory containes nginx implementation which is exposed on port 80
 
 
