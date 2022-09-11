@@ -1,0 +1,8 @@
+version: "3"
+services:
+  site2:
+    build:
+      context: .
+    expose:
+      - "30008"
+    restart: always
