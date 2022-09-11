@@ -4,6 +4,7 @@ Deploy two web applications running on docker containers inside an EC2 Instance.
 
 ## Diagram
 
+![Reverse-proxy-diagram](https://user-images.githubusercontent.com/43488291/189527405-d892f904-32b4-4be8-8432-846bcb5058ff.png)
 
 
 ## Implementation
