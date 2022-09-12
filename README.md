@@ -20,7 +20,7 @@ Reverse proxy is a server implementation which is placed in front of web servers
 
 In order to allow HTTPS connection we will need to add certificates. This is bit tricky in case of docker containers.
 
-Please refer this article for more info:
+I had help from below article:
 
 https://pentacent.medium.com/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
 
