@@ -1,6 +1,6 @@
 ## Context
 
-Deploy two web applications running on docker containers inside an EC2 Instance. Map web applications to respective domain names. Make sure they are accessible on secure HTTPS connection only.
+Deploy two web applications running on docker containers inside an EC2 Instance. Map web applications to respective domain names. Add letsencrypt SSL certificates so that sites are accessible on HTTPS.
 
 ## Diagram
 
