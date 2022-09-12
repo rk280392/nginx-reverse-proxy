@@ -18,9 +18,6 @@ Reverse proxy is a server implementation which is placed in front of web servers
 
    - nginx-certbot directory runs dummy nginx and certbot containers which are responsible for getting the SSL certificates.
 
-
-###   Steps:
-
 In order to allow HTTPS connection we will need to add certificates. This is bit tricky in case of docker containers.
 
 Please refer this article for more info:
@@ -30,6 +27,8 @@ https://pentacent.medium.com/nginx-and-lets-encrypt-with-docker-in-less-than-5-m
 The idea is to create a dummy certificate to start nginx inside docker container, then run certbot to create new valid certificates.
 
 Certificates will be stored in /data/certbot/ directory. We will later mount this directory while running nginx-reverse-proxy
+
+###   Steps:
 
 ```shell
       1 - git clone https://github.com/rk280392/nginx-reverse-proxy.git
