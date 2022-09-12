@@ -17,8 +17,12 @@ Reverse proxy is a server implementation which is placed in front of web servers
    2 - reverse proxy directory containes nginx implementation which is exposed on port 80
 
 ###   Steps:
+
+```shell
    
       1 - git clone https://github.com/rk280392/nginx-reverse-proxy.git
+
+```
 
 In order to allow HTTPS connection we will need to add certificates. This is bit tricky in case of docker containers.
 
@@ -30,13 +34,18 @@ The idea is to create a dummy certificate to start nginx inside docker container
 
 Certificates will be stored in /data/certbot/ directory. We will later mount this directory while running nginx-reverse-proxy
 
+```shell
+
       2 - cd nginx-reverse-proxy/nginx-certbot
       3 - sudo cp -r data /data
       4 - Update domain names in init-letsencrypt.sh
       5 - Update domain names in /data/nginx/app.conf
       6 - sudo ./init-letsencrypt.sh
+```
 
 After successfully running these, you should have generated certificates. It will be stored in /data/certbot/conf directory by default if not changed.
+
+```shell
 
       7 - Run `docker stop <container-id>`  To stop the container created above as we don't need it after certificate is generated. 
       8 - cd ../site1
@@ -48,7 +57,6 @@ After successfully running these, you should have generated certificates. It wil
      14 - Update the docker-compose.yaml file with correct volume mounts.
      15 - Update the default.conf with correct domain names, proxy_pass and ssl certificates.
      16 - docker-compose up --force-recreate -d
+```
 
 If everything works fine, you can open the site on https://<domain-name> and it should work fine.
-
-
