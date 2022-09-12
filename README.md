@@ -10,19 +10,16 @@ Deploy two web applications running on docker containers inside an EC2 Instance.
 
 Reverse proxy is a server implementation which is placed in front of web servers. It forwards client requests to those servers depending on defined conditions in its implementation. Basically it hides servers from end users, which increases security, performance and reliability.
 
-## Implementation
+## Implementation:
 
-   1 - site1 and site2 directories contains simple go webapps running on port 30008
+   - site1 and site2 directories contains simple go webapps running on port 30008
 
-   2 - reverse proxy directory containes nginx implementation which is exposed on port 80
+   - reverse proxy directory contains nginx implementation which is exposed on port 80
+
+   - nginx-certbot directory runs dummy nginx and certbot containers which are responsible for getting the SSL certificates.
+
 
 ###   Steps:
-
-```shell
-   
-      1 - git clone https://github.com/rk280392/nginx-reverse-proxy.git
-
-```
 
 In order to allow HTTPS connection we will need to add certificates. This is bit tricky in case of docker containers.
 
@@ -35,7 +32,7 @@ The idea is to create a dummy certificate to start nginx inside docker container
 Certificates will be stored in /data/certbot/ directory. We will later mount this directory while running nginx-reverse-proxy
 
 ```shell
-
+      1 - git clone https://github.com/rk280392/nginx-reverse-proxy.git
       2 - cd nginx-reverse-proxy/nginx-certbot
       3 - sudo cp -r data /data
       4 - Update domain names in init-letsencrypt.sh
